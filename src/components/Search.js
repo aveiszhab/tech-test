@@ -1,7 +1,9 @@
-import React from 'react';
+import React , { useState } from 'react';
 import '../styles/Search.css';
 
 const Search = () => {
+    const [searchText, setSearchText] = useState('');
+    console.log(searchText);
     
     return(
         <>
@@ -12,6 +14,7 @@ const Search = () => {
                     className='search-input'
                     type='text'
                     placeholder='Search for an image'
+                    onChange={(e) => setSearchText(e.target.value)}
                 >
                 </input>
                 <button
