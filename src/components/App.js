@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/App.css';
 import Search from './Search';
+import SearchResults from '../components/SearchResults';
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
       name='nasa-logo'
     />
     <Search setSearchResultList ={setSearchResult}/>
+    <SearchResults results = {searchResult} />
     </div>
   );
 }
