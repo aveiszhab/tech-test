@@ -2,7 +2,9 @@
 
 exports[`SearchResults renders correctly to match the SearchResults snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="image-container"
+  >
     <img
       alt="spaceImage"
       class="spaceImages"
