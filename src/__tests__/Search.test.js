@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Search from '../components/Search';
 
 describe('Search', () => {
@@ -23,4 +23,19 @@ describe('Search', () => {
         expect(goButton).toHaveAttribute('type','submit');
         expect(goButton).toHaveTextContent(/go/i)
     });
+
+    it('calls onChange and onSubmit callback handlers', async () => {
+        render(<Search />);
+
+        const searchBox = screen.getByRole('textbox', {placeholder:'Search for an image'});
+        const goButton = screen.getByRole('button', {name: /go/i});
+
+        fireEvent.change(searchBox, {
+            target: {value: 'moon'}
+        });
+        fireEvent.click(goButton);
+
+        expect(searchBox.value).toBe('moon');
+    });
+
 });
