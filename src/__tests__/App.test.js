@@ -10,7 +10,7 @@ describe('App', () => {
   });
 
   it('renders App correctly', () => {
-    render(<App />);
+    render(<App/>);
 
     const nasaImage = screen.getByRole('img', {name: /nasa/i});
 

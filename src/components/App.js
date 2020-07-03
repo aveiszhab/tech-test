@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
+import Search from './Search';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       alt='nasa-logo'
       name='nasa-logo'
     />
+    <Search />
     </div>
   );
 }
