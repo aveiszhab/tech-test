@@ -4,7 +4,12 @@ import '../styles/App.css';
 function App() {
   return (
     <div className="App">
-        <p>Hello World!</p>
+    <img
+      className='nasa-logo'
+      src='https://cdn.cnn.com/cnnnext/dam/assets/200424060716-nasa-worm-logo.jpg'
+      alt='nasa-logo'
+      name='nasa-logo'
+    />
     </div>
   );
 }

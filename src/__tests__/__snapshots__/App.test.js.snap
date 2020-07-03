@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly to match the App snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <img
+      alt="nasa-logo"
+      class="nasa-logo"
+      name="nasa-logo"
+      src="https://cdn.cnn.com/cnnnext/dam/assets/200424060716-nasa-worm-logo.jpg"
+    />
+  </div>
+</DocumentFragment>
+`;
