@@ -1,16 +1,18 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, wait } from '@testing-library/react';
 import Search from '../components/Search';
 
 describe('Search', () => {
     it('renders correctly to match the Search snapshot', () => {
-        const {asFragment} = render(<Search />);
+        const mockHandleSubmit = jest.fn();
+        const {asFragment} = render(<Search setSearchResultList ={mockHandleSubmit}/>);
 
         expect(asFragment()).toMatchSnapshot();
     });
 
     it('renders form correctly', () => {
-        render(<Search />);
+        const mockHandleSubmit = jest.fn();
+        render(<Search setSearchResultList ={mockHandleSubmit}/>);
 
         const searchBox = screen.getByRole('textbox', {placeholder:'Search for an image'});
         expect(searchBox).toBeInTheDocument();
@@ -25,7 +27,8 @@ describe('Search', () => {
     });
 
     it('calls onChange and onSubmit callback handlers', async () => {
-        render(<Search />);
+        const mockHandleSubmit = jest.fn();
+        render(<Search setSearchResultList ={mockHandleSubmit}/>);
 
         const searchBox = screen.getByRole('textbox', {placeholder:'Search for an image'});
         const goButton = screen.getByRole('button', {name: /go/i});
@@ -36,6 +39,10 @@ describe('Search', () => {
         fireEvent.click(goButton);
 
         expect(searchBox.value).toBe('moon');
+        await wait(() => {
+            expect(mockHandleSubmit).toHaveBeenCalledTimes(1);
+        });
+        
     });
 
 });
