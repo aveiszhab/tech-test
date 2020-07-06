@@ -36,7 +36,7 @@ git clone git@github.com:aveiszhab/tech-test.git
 * Open the app on localhost:
 npm start 
 
-* Start searching for space images by typing in search keywords into the textbox
+* Start searching for space images by typing in search keywords into the textbox. Press go and you should be able to see the images related to the search keyword.
 
 # Possible improvements:
 * adding mock API testing
